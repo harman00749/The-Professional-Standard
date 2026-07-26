@@ -1,0 +1,149 @@
+{
+  "info": {
+    "name": "The Data Storm API - Sprint 10",
+    "description": "Postman collection for Sprint 10 Track B MongoDB Atlas and Mongoose CRUD testing.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/"
+      }
+    },
+    {
+      "name": "Create User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Harman\",\n  \"email\": \"harman@example.com\"\n}"
+        },
+        "url": "{{baseUrl}}/users"
+      }
+    },
+    {
+      "name": "Get Users",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/users"
+      }
+    },
+    {
+      "name": "Delete User",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/users/PASTE_USER_ID_HERE"
+      }
+    },
+    {
+      "name": "Create Post With Author Object",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Sprint 10 Backend\",\n  \"content\": \"This post is stored permanently in MongoDB Atlas.\",\n  \"author\": {\n    \"name\": \"Harman\",\n    \"email\": \"harman@example.com\"\n  }\n}"
+        },
+        "url": "{{baseUrl}}/posts"
+      }
+    },
+    {
+      "name": "Create Post With Existing Author ID",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"MongoDB Atlas Persistence\",\n  \"content\": \"This request uses an existing User _id as authorId.\",\n  \"authorId\": \"PASTE_USER_ID_HERE\"\n}"
+        },
+        "url": "{{baseUrl}}/posts"
+      }
+    },
+    {
+      "name": "Get All Posts",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/posts"
+      }
+    },
+    {
+      "name": "Get Top 3 Recent Posts",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/posts/top/recent"
+      }
+    },
+    {
+      "name": "Get One Post",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/posts/PASTE_POST_ID_HERE"
+      }
+    },
+    {
+      "name": "Update Post",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Updated Sprint 10 Backend\",\n  \"content\": \"MongoDB update request is working successfully.\"\n}"
+        },
+        "url": "{{baseUrl}}/posts/PASTE_POST_ID_HERE"
+      }
+    },
+    {
+      "name": "Delete Post",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/posts/PASTE_POST_ID_HERE"
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"harman\",\n  \"password\": \"demo123\"\n}"
+        },
+        "url": "{{baseUrl}}/login"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    }
+  ]
+}

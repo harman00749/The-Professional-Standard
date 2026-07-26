@@ -1,0 +1,28 @@
+{
+  "name": "data-storm-api",
+  "version": "1.0.0",
+  "description": "Sprint 10 Track B Express API with MongoDB Atlas, Mongoose ODM, and persistent blog posts.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongodb-atlas",
+    "mongoose",
+    "crud"
+  ],
+  "author": "Harman",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "cloudinary": "^2.10.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.7.4",
+    "multer": "^2.2.0"
+  }
+}
